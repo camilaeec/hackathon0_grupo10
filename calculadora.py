@@ -24,3 +24,5 @@ def calculate(expression):
 # Example usage
 if __name__ == "__main__":
     print(calculate("4 / 2"))  # Should return 14
+
+    
