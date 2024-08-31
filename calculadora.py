@@ -2,16 +2,13 @@ import re
 
 def calculate(expression):
     expression = expression.strip()
-
     if not expression:
         raise ValueError("Empty input is not allowed")
-
-    # Check for invalid characters
+    #Check
     if not re.match(r'^[\d\s\+\-\*/\(\)\.]+$', expression):
         raise ValueError("Invalid character found in the expression")
-
     try:
-        # Evaluate the expression
+        #Evaluar expresion
         result = eval(expression)
         return result
     except ZeroDivisionError:
@@ -20,9 +17,8 @@ def calculate(expression):
         raise SyntaxError("Invalid syntax in the expression")
     except Exception as e:
         raise ValueError(f"An error occurred: {str(e)}")
-
-# Example usage
+#Ejemplo:
 if __name__ == "__main__":
-    print(calculate("4 / 2"))  # Should return 14
+    print(calculate("4 / 2"))  
 
     
