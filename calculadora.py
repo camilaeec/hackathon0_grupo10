@@ -4,23 +4,21 @@ def calculate(expression):
     expression = expression.strip()
 
     if not expression:
-        raise ValueError("Empty input is not allowed")
-
-    # Check for invalid characters
+        raise ValueError("Imput invalido")
+    #Check
     if not re.match(r'^[\d\s\+\-\*/\(\)\.]+$', expression):
-        raise ValueError("Invalid character found in the expression")
-
+        raise ValueError("Caracter invalido en la expresion")
     try:
-        # Evaluate the expression
+        #Evaluar expresion
         result = eval(expression)
         return result
     except ZeroDivisionError:
-        raise ZeroDivisionError("Division by zero is not allowed")
+        raise ZeroDivisionError("No se permite dividir por cero")
     except SyntaxError:
-        raise SyntaxError("Invalid syntax in the expression")
+        raise SyntaxError("Sintaxis invalidad en la expresion")
     except Exception as e:
-        raise ValueError(f"An error occurred: {str(e)}")
-
-# Example usage
+        raise ValueError(f"Ha ocurrido un error: {str(e)}")
+#Ejemplo:
 if __name__ == "__main__":
-    print(calculate("4 / 2"))  # Should return 14
+    print(calculate("4 / 2"))  
+
