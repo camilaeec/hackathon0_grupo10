@@ -1,8 +1,7 @@
-Integrantes del grupo:
-Ricardo Reyes Pizzani
-
+Integrantes:
+Ricardo Reyes
 
 
 
 Descripcion:
-Hola, mi nombre es Ricardo
+Me llamo Ricardo Reyes y estudio Ciencia de la Computacion en la UTEC
