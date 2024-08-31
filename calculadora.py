@@ -2,6 +2,7 @@ import re
 
 def calculate(expression):
     expression = expression.strip()
+
     if not expression:
         raise ValueError("Imput invalido")
     #Check
@@ -21,4 +22,3 @@ def calculate(expression):
 if __name__ == "__main__":
     print(calculate("4 / 2"))  
 
-    
