@@ -1,79 +1,28 @@
-<<<<<<< HEAD
-import math
+import re
 
-def calculadora():
-    while True:
-        print("\n--- Calculadora Básica ---")
-        print("1. Sumar")
-        print("2. Restar")
-        print("3. Multiplicar")
-        print("4. Dividir")
-        print("C. Salir")
-        
-        opcion = input("Selecciona una opción (1-4 o C para salir): ")
+def calculate(expression):
+    expression = expression.strip()
 
-        if opcion == '1':
-            num1 = float(input("Ingresa el primer número: "))
-            num2 = float(input("Ingresa el segundo número: "))
-            print(f"Resultado: {num1} + {num2} = {num1 + num2}")
-  
+    if not expression:
+        raise ValueError("Empty input is not allowed")
 
+    # Check for invalid characters
+    if not re.match(r'^[\d\s\+\-\*/\(\)\.]+$', expression):
+        raise ValueError("Invalid character found in the expression")
 
+    try:
+        # Evaluate the expression
+        result = eval(expression)
+        return result
+    except ZeroDivisionError:
+        raise ZeroDivisionError("Division by zero is not allowed")
+    except SyntaxError:
+        raise SyntaxError("Invalid syntax in the expression")
+    except Exception as e:
+        raise ValueError(f"An error occurred: {str(e)}")
 
+# Example usage
+if __name__ == "__main__":
+    print(calculate("4 / 2"))  # Should return 14
 
-
-
-        
-        elif opcion == '2':
-            num1 = float(input("Ingresa el primer número: "))
-            num2 = float(input("Ingresa el segundo número: "))
-            print(f"Resultado: {num1} - {num2} = {num1 - num2}")
-=======
-import math
-
-def calculadora():
-    while True:
-        print("\n--- Calculadora Básica ---")
-        print("1. Sumar")
-        print("2. Restar")
-        print("3. Multiplicar")
-        print("4. Dividir")
-        print("C. Salir")
-        
-        opcion = input("Selecciona una opción (1-4 o C para salir): ")
-
-        if opcion == '1':
-            num1 = float(input("Ingresa el primer número: "))
-            num2 = float(input("Ingresa el segundo número: "))
-            print(f"Resultado: {num1} + {num2} = {num1 + num2}")
->>>>>>> 3c2096215aaa0789be5bc11072575186ce21202c
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
-=======
-
-
-
-
-
-calculadora()
->>>>>>> 3c2096215aaa0789be5bc11072575186ce21202c
+    
